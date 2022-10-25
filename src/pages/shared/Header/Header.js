@@ -25,7 +25,7 @@ const Header = () => {
               <Nav.Link href="#pricing"><Link to='/courses'>Courses</Link></Nav.Link>
               <Nav.Link href="#pricing"><Link to='/blog'>Blog</Link></Nav.Link>
               <Nav.Link href="#pricing"><Link to='/faq'>FAQ</Link></Nav.Link>
-              <Nav.Link href="#pricing">Login</Nav.Link>
+              <Nav.Link href="#pricing"><Link to='/login'>Login</Link></Nav.Link>
               <button className="btn btn-secondary">Dark</button>
             </Nav>
           </Navbar.Collapse>
