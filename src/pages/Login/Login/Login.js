@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -8,9 +8,10 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const {setUser, googleSignIn} = useContext(AuthContext);
+  const {setUser, googleSignIn, githubSignIn} = useContext(AuthContext);
 
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleGoogleSignIn = () => {
         googleSignIn(googleProvider)
@@ -22,6 +23,18 @@ const Login = () => {
         .catch((error) => {
             console.error(error);
         })
+    }
+
+    const handleGithubSignIn = () => {
+      githubSignIn(githubProvider)
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
     }
 
   return (
@@ -54,7 +67,7 @@ const Login = () => {
             <button onClick={handleGoogleSignIn} className="me-2 btn btn-primary">
             <FaGoogle className="me-2"></FaGoogle>Google
             </button>
-            <button className=" btn btn-primary">
+            <button onClick={handleGithubSignIn} className=" btn btn-primary">
             <FaGithub className="me-2"></FaGithub>Github
             </button>
         </div>
