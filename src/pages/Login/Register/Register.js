@@ -6,6 +6,8 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Register = () => {
+    
+
   return (
     <div>
       <Container>
@@ -40,7 +42,7 @@ const Register = () => {
             </Button>
           </div>
 
-          <div className="text-center mt-4">
+          {/* <div className="text-center mt-4">
             <p>
               <small>Or, Sign Up using</small>
             </p>
@@ -51,7 +53,7 @@ const Register = () => {
             <button className=" btn btn-primary">
               <FaGithub className="me-2"></FaGithub>Github
             </button>
-          </div>
+          </div> */}
 
           <div className="text-center mt-2">
             <p>
