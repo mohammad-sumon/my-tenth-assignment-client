@@ -4,13 +4,17 @@ import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
   const { setUser, googleSignIn, githubSignIn, signIn } =
     useContext(AuthContext);
-    const [error, setError] = useState("");
+  const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const googleProvider = new GoogleAuthProvider();
   const githubProvider = new GithubAuthProvider();
@@ -45,7 +49,7 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log( email, password);
+    console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
@@ -54,20 +58,20 @@ const Login = () => {
         form.reset();
         setError("");
         alert("Successfully Login");
+        navigate(from, {replace: true});
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
-      })
+      });
   };
-  
 
   return (
     <div>
       <Container>
         <h1 className="text-center">Login Here !!!</h1>
         <Form onSubmit={handleSubmit} className="border p-2 rounded">
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
@@ -87,9 +91,7 @@ const Login = () => {
             />
           </Form.Group>
 
-          <Form.Text className="text-danger d-block">
-            {error}
-          </Form.Text>
+          <Form.Text className="text-danger d-block">{error}</Form.Text>
           <div className="text-center">
             <Button variant="success" type="submit">
               LOGIN
@@ -105,20 +107,19 @@ const Login = () => {
             </p>
           </div>
         </Form>
-        
       </Container>
       <div className="text-center mt-4">
-          <p>
-            <small>Or, Sign Up using</small>
-          </p>
-          <hr className="w-50 mx-auto" />
-          <button onClick={handleGoogleSignIn} className="me-2 btn btn-primary">
-            <FaGoogle className="me-2"></FaGoogle>Google
-          </button>
-          <button onClick={handleGithubSignIn} className=" btn btn-primary">
-            <FaGithub className="me-2"></FaGithub>Github
-          </button>
-        </div>
+        <p>
+          <small>Or, Sign Up using</small>
+        </p>
+        <hr className="w-50 mx-auto" />
+        <button onClick={handleGoogleSignIn} className="me-2 btn btn-primary">
+          <FaGoogle className="me-2"></FaGoogle>Google
+        </button>
+        <button onClick={handleGithubSignIn} className=" btn btn-primary">
+          <FaGithub className="me-2"></FaGithub>Github
+        </button>
+      </div>
     </div>
   );
 };
