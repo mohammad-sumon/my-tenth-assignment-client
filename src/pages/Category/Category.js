@@ -3,9 +3,17 @@ import { Container } from "react-bootstrap";
 import { Link, useLoaderData } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+// import { Document, Page } from 'react-pdf';
 
 const Category = () => {
   const categoryNews = useLoaderData();
+
+  // react pdf
+  // const [numPages, setNumPages] = useState(null);
+  // const [pageNumber, setPageNumber] = useState(1);
+  // function onDocumentLoadSuccess({ numPages }) {
+  //   setNumPages(numPages);
+  // }
 
   const [categories, setCategories] = useState([]);
 
