@@ -68,3 +68,27 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+# Website Name:
+### Expert Programmer
+
+# Live Website Link:
+### https://expert-programmer-client.firebaseapp.com/courses
+
+## Features & Functionality
+<ul>
+    <li>React Router Dom</li>
+    <li>Firebase Authentication</li>
+    <li>Used backend server in Vercel</li>
+    <li>Private Route</li>
+    <li>Facebook & Github Authtication</li>
+</ul>
+
+## Technologies
+<ul>
+    <li>React bootstrap</li>
+    <li>React toastify</li>
+    <li>React icons</li>
+    <li>React PDF</li>
+</ul>
