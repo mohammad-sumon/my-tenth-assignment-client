@@ -6,3 +6,16 @@
     font-weight: bold;
     color: brown;
 }
+.website-name a{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: orange;
+}
+.navBar{
+    background-color: rgb(228, 208, 170);
+}
+.navBar a{
+    text-decoration: none;
+    font-weight: 500;
+}

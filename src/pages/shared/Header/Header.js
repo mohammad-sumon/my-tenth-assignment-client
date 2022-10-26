@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import Logo from "../../../assets/logo.png";
 import { AuthContext } from "../../../contexts/AuthProvider/AuthProvider";
 import "./Header.css";
-import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut, setUser } = useContext(AuthContext);
@@ -23,9 +22,19 @@ const Header = () => {
       });
   };
 
+  const themeChanged = (event) => {
+    const themeDark = event.target.innerText;
+    if(themeDark === 'Dark'){
+      event.target.innerText = 'Light';
+    }
+    else{
+      event.target.innerText = 'Dark';
+    }
+  }
+
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+      <Navbar collapseOnSelect expand="lg"  variant="light" className="navBar">
         <Container>
           <Navbar.Brand className="website-name">
             <Link to="/">
@@ -71,7 +80,7 @@ const Header = () => {
                 </>
               )}
             </>
-            <button className="btn btn-secondary">Dark</button>
+            <button onClick={themeChanged} className="btn btn-secondary">Dark</button>
           </nav>
         </Container>
       </Navbar>
