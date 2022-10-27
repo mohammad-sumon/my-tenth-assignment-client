@@ -90,5 +90,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     <li>React bootstrap</li>
     <li>React toastify</li>
     <li>React icons</li>
-    <li>React PDF</li>
+    <li>React To PDF</li>
 </ul>

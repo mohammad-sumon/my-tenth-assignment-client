@@ -3,6 +3,11 @@ import { Container } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
 
 const Checkout = () => {
+
+  const checkoutDone = () => {
+    alert('Your Checkout is Successful');
+  }
+
   const categoryNews = useLoaderData();
   return (
     <div className="text-center">
@@ -14,7 +19,7 @@ const Checkout = () => {
           <span style={{ color: "orange" }}>{categoryNews.name}</span>{" "}
         </h3>
         <p>Just click on the Checkout button</p>
-        <button className="btn btn-primary">Checkout</button>
+        <button onClick={checkoutDone} className="btn btn-primary">Checkout</button>
       </Container>
     </div>
   );
