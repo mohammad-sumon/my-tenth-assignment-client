@@ -31,14 +31,14 @@ const Register = () => {
       })
       .catch((error) => {
         console.error(error);
-        setError(error.message)
+        setError(error.message);
       });
   };
 
   return (
     <div>
       <Container>
-        <h1 className="text-center">Registration Form!!!</h1>
+        <h1 className="text-center my-4">Registration Form!!!</h1>
         <Form onSubmit={handleSubmit} className="border p-2 rounded">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Full Name</Form.Label>
@@ -78,9 +78,7 @@ const Register = () => {
             />
           </Form.Group>
 
-          <Form.Text className="text-danger d-block">
-            {error}
-          </Form.Text>
+          <Form.Text className="text-danger d-block">{error}</Form.Text>
           <div className="text-center">
             <Button variant="success" type="submit">
               REGISTER

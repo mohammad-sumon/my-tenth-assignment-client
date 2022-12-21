@@ -5,7 +5,9 @@ import Accordion from "react-bootstrap/Accordion";
 const Blog = () => {
   return (
     <div className="text-center">
-      <h3 style={{ color: "orange" }}>Welcome to my Blog Section</h3>
+      <h3 className="my-4" style={{ color: "orange" }}>
+        Welcome to my Blog Section
+      </h3>
       <Container className="mt-4">
         <Accordion defaultActiveKey="0">
           <Accordion.Item eventKey="0">

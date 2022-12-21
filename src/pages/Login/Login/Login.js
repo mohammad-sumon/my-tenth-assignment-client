@@ -25,7 +25,7 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         console.log(user);
-        navigate(from, {replace: true});
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -38,7 +38,7 @@ const Login = () => {
         const user = result.user;
         setUser(user);
         console.log(user);
-        navigate(from, {replace: true});
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -60,7 +60,7 @@ const Login = () => {
         form.reset();
         setError("");
         alert("Successfully Login");
-        navigate(from, {replace: true});
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -71,7 +71,7 @@ const Login = () => {
   return (
     <div>
       <Container>
-        <h1 className="text-center">Login Here !!!</h1>
+        <h1 className="text-center my-4">Login Here !!!</h1>
         <Form onSubmit={handleSubmit} className="border p-2 rounded">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
